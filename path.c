@@ -20,3 +20,5 @@ char *handle_path(char *input)
 		token = strtok(cache, "=");
 		if (strcmp(token, "PATH") == 0)
 		{
+			token = strtok(NULL, "=");
+			token = strtok(token, ":");
