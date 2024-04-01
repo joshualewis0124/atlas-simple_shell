@@ -31,3 +31,10 @@ void exec(char **args, char *input)
 
 	childPid = fork();
 
+	if (childPid == -1)
+	{
+		perror("fork\n");
+		free(input);
+		free(args[0]);
+		exit(EXIT_FAILURE);
+	}
