@@ -36,3 +36,17 @@ void tokenize(char *input, char *args[])
 		free(args[0]);
 		exit(0);
 	}
+
+	token = strdup(args[0]);
+	args[0] = handle_path(args[0]);
+	if (args[0] != NULL)
+	{
+		free(token);
+		exec(args, input);
+		free(args[0]);
+		return;
+	}
+	fprintf(stderr, "./hsh: 1: %s: not found\n", token);
+	free(token);
+	exit(127);
+}
