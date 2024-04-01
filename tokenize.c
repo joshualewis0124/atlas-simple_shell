@@ -9,4 +9,9 @@
 
 void tokenize(char *input, char *args[])
 {
+	char *token;
+	unsigned int i = 0;
+
+	token = strtok(input, " ");
+
 
