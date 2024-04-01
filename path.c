@@ -41,3 +41,10 @@ char *handle_path(char *input)
 				token = strtok(NULL, ":");
 			}
 		}
+		free(cache);
+		i++;
+	}
+
+	free(input);
+	return (NULL);
+}
