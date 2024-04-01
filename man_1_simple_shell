@@ -1,0 +1,29 @@
+.SH NAME
+simple_shell - creates a simple shell
+.nf
+This simple shell program is executed by typing ./hsh
+.br
+Then, it will display a prompt ("$ ") and wait for a command as an input, such as command [arguments] [other]
+.SH DESCRIPTION
+.SH EXAMPLES
+The following example demonstrates how to use \fB simple shell\fP:
+./hsh [command] [options]
+$ ls -l
+.fi
+
+/bin/ls
+/bin/ls -a
+ls
+.fi
+
+This will output:
+.nf
+(Your Files)
+.fi
+.SH BUGS
+Simple shell only works one time, then has to be started again.
+
+.SH AUTHOR
+Joshua Lewis
+
+
