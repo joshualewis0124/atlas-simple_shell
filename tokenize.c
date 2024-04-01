@@ -30,3 +30,9 @@ void tokenize(char *input, char *args[])
 		printEnv();
 		return;
 	}
+
+	if (strcmp(input, "exit") == 0 && args[1] == NULL)
+	{
+		free(args[0]);
+		exit(0);
+	}
