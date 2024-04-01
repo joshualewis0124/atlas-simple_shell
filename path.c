@@ -15,3 +15,8 @@ char *handle_path(char *input)
 		return (strdup(input));
 	
 	while (environ[i] != NULL)
+	{
+		cache = strdup(environ[i]);
+		token = strtok(cache, "=");
+		if (strcmp(token, "PATH") == 0)
+		{
