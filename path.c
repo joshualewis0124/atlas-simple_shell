@@ -13,3 +13,5 @@ char *handle_path(char *input)
 
 	if (strchr(input, '/') != NULL)
 		return (strdup(input));
+	
+	while (environ[i] != NULL)
