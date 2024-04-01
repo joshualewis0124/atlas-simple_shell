@@ -22,3 +22,22 @@ char *handle_path(char *input)
 		{
 			token = strtok(NULL, "=");
 			token = strtok(token, ":");
+			while (token != NULL)
+			{
+				result = malloc(strlen(token) + strlen(input) + 2);
+				if (result == NULL)
+				{
+					perror("Malloc is NULL");
+					return (NULL);
+				}
+				sprintf(result, "%s/%s", token, input);
+				if (access(result, X_OK) == 0)
+				{
+					free(cache);
+					return (result);
+				}
+
+				free(result);
+				token = strtok(NULL, ":");
+			}
+		}
