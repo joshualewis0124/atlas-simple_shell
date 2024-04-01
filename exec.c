@@ -38,3 +38,10 @@ void exec(char **args, char *input)
 		free(args[0]);
 		exit(EXIT_FAILURE);
 	}
+	else if (childPid == 0)
+	{
+		execve(args[0], args, environ);
+		perror(args[0]);
+		free(args[0]);
+		exit(EXIT_FAILURE);
+	}
