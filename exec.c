@@ -12,3 +12,22 @@ void _error(char *args[])
 	free(args[0]);
 	exit(98);
 }
+
+/**
+ * exec - executes the input received
+ * @args: arguments
+ * @input: input
+ * Return: void
+ */
+
+void exec(char **args, char *input)
+{
+
+	int status;
+	pid_t childPid = 0;
+
+	if (access(args[0], X_OK) != 0)
+		_error(args);
+
+	childPid = fork();
+
