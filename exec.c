@@ -48,3 +48,11 @@ void exec(char **args, char *input)
 	else
 	{
 		wait(&status);
+		if (WIFEXITED(status))
+		{
+			free(args[0]);
+			free(input);
+			exit(WEXITSTATUS(status));
+		}
+	}
+}
