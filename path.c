@@ -10,3 +10,6 @@ char *handle_path(char *input)
 	{
 	int i = 0;
 	char *cache, *token, *result;
+
+	if (strchr(input, '/') != NULL)
+		return (strdup(input));
