@@ -20,3 +20,7 @@ void tokenize(char *input, char *args[])
 		i++;
 		token = strtok(NULL, " ");
 	}
+	args[i] = NULL;
+
+	if (args[0] == NULL)
+		exit(0);
