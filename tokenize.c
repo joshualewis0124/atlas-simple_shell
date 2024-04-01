@@ -14,4 +14,9 @@ void tokenize(char *input, char *args[])
 
 	token = strtok(input, " ");
 
-
+	while (token != NULL)
+	{
+		args[i] = token;
+		i++;
+		token = strtok(NULL, " ");
+	}
