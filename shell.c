@@ -30,7 +30,7 @@ int main(void)
 	char *args[64] = { NULL };
 	size_t inputSize = 0;
 	ssize_t inputRead;
-	
+
 	while (1)
 	{
 		if (isatty(STDIN_FILENO))
