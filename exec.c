@@ -45,3 +45,6 @@ void exec(char **args, char *input)
 		free(args[0]);
 		exit(EXIT_FAILURE);
 	}
+	else
+	{
+		wait(&status);
