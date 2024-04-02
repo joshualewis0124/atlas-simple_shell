@@ -16,7 +16,7 @@ The aim of this endeavor is to develop a basic UNIX command interpreter from the
 
 Your shell will be compiled on Ubuntu 20.04 LTS using:
 
-``` gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh ```
+ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 
 ## Allowed functions 
 
@@ -74,31 +74,40 @@ All functions from string.h.
 
 
 
-### Testing examples
+### Examples
 
-Your shell should work like this in interactive mode :
+Your shell should work like this in interactive mode:
 
-``` 
-root@id:/holbertonschool-simple_shell# ./hsh   
-$ /bin/ls
-$ hsh main.c shell.c
-$ exit
-root@id:/holbertonschool-simple_shell#
-```
+$ ./hsh
+($) /bin/ls
+hsh main.c shell.c
+($)
+($) exit
+$
+But also in non-interactive mode:
 
-But also in non-interactive mode :
-
-```
-root@id:/holbertonschool-simple_shell# echo "/bin/ls" | ./hsh
+$ echo "/bin/ls" | ./hsh
 hsh main.c shell.c test_ls_2
-root@id:/holbertonschool-simple_shell#
-root@id:/holbertonschool-simple_shell# cat test_ls_2
+$
+$ cat test_ls_2
 /bin/ls
 /bin/ls
-root@id:/holbertonschool-simple_shell#
-root@id:/holbertonschool-simple_shell# cat test_ls_2 | ./hsh
+$
+$ cat test_ls_2 | ./hsh
 hsh main.c shell.c test_ls_2
 hsh main.c shell.c test_ls_2
-root@id:/holbertonschool-simple_shell#
-```
+$
 
+## Files
+- `main.h` : Header file containing all prototypes and necessary libraries
+- `shell.c` : File containing the main function of the program
+- `exec.c` : File containing the function `execve()` to execute the input received
+- `tokenize.c` : File containing the function `strtok()` in order to parse the arguments received in the input
+- `Path.c` : File containing a program to handle the `PATH`
+- `printEnv.c` : Prints enviromental variables using environ
+- `README.md` README file
+- `AUTHORS` : The Author of this project
+
+## Author
+
+- **[Joshua Lewis](https://github.com/joshualewis0124)**
